@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="sim" default="false"/>
+  <arg name="local" default="false"/>
+
+  <include file="$(find srs004host)/launch/UI.launch" />
+  <include file="$(find srs004host)/launch/main.launch" />
+
+  <include file="$(find srs004host)/launch/drivers.launch" />
+
+  <group if="$(arg sim)">
+    <include file="$(find srs004host)/launch/phycon_sim.launch" />
+  </group>
+  <group unless="$(arg sim)">
+    <include file="$(find srs004host)/launch/phycon_actual.launch" />
+
+    <group if="$(arg local)">
+      <include file="$(find srs004host)/launch/local.launch" />
+    </group>
+    <group unless="$(arg local)">
+      <include file="$(find srs004host)/launch/remote.launch" />
+    </group>
+
+  </group>
+
+</launch>

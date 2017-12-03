@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+    <node name="srs004_robot_commander" pkg="srs004host" type="srs004_robot_commander" >
+      <remap from="light" to="phycon/hit0/light" />
+      <remap from="hit_reset" to="phycon/hit0/reset" />
+    </node>
+  </group>
+</launch>
+

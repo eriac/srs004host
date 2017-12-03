@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+    <node name="omni_driver" pkg="srs004host" type="omni_driver" output="screen">
+      <remap from="twist" to="move_twist"/>
+      <remap from="wheel0" to="phycon/wheel0/target"/>
+      <remap from="wheel1" to="phycon/wheel1/target"/>
+      <remap from="wheel2" to="phycon/wheel2/target"/>
+      <param name="wheel_base" value="0.0972"/>
+      <param name="wheel_radius" value="0.019"/>
+      <param name="linear_velocity" value="1.5"/>
+      <param name="angular_velocity" value="4.0"/>
+      <param name="wheel0" value="$(eval 3.1415/3)"/>
+      <param name="wheel1" value="$(eval 3.1415)"/>
+      <param name="wheel2" value="$(eval 5*3.1415/3)"/>
+    </node>
+
+    <node name="omni_odometry" pkg="srs004host" type="omni_odometry" output="screen">
+      <remap from="odometry0" to="phycon/wheel0/odometry"/>
+      <remap from="odometry1" to="phycon/wheel1/odometry"/>
+      <remap from="odometry2" to="phycon/wheel2/odometry"/>
+      <param name="wheel_base" value="0.0972"/>
+      <param name="wheel_radius" value="0.019"/>
+    </node>
+
+    <node name="gun_driver" pkg="srs004host" type="gun_driver">
+      <remap from="twist_in"  to="gun_twist"/>
+      <remap from="twist_out" to="phycon/gun/twist"/>
+      <remap from="command"   to="gun_command"/>
+      <remap from="shot"      to="phycon/gun/shot"/>
+      <remap from="laser"     to="phycon/gun/laser"/>
+
+      <param name="yaw_lower_limit" value="-0.18"/>
+      <param name="yaw_upper_limit" value="0.16"/>
+      <param name="pitch_lower_limit" value="-0.2"/>
+      <param name="pitch_upper_limit" value="0.2"/>
+      <param name="yaw_velocity" value="0.3"/>
+      <param name="pitch_velocity" value="0.3"/>
+    </node>
+  </group>
+</launch>
+

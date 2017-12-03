@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+
+  <group ns="$(arg robot_name)">
+
+    <group ns="phycon">
+
+      <node name="wheel0" pkg="omni_test" type="phycon_wheel_actual" >
+        <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
+        <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
+        <param name="CID" value="1"/>
+        <param name="PPR" value="102.1"/>
+      </node>
+      <node name="wheel1" pkg="omni_test" type="phycon_wheel_actual" >
+        <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
+        <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
+        <param name="CID" value="2"/>
+        <param name="PPR" value="102.1"/>
+      </node>
+      <node name="wheel2" pkg="omni_test" type="phycon_wheel_actual" >
+        <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
+	<remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
+        <param name="CID" value="3"/>
+        <param name="PPR" value="102.1"/>
+      </node>
+
+      <node name="gun" pkg="omni_test" type="phycon_gun_actual" >
+        <remap from="yaw"   to="gun/yaw"/>
+        <remap from="pitch" to="gun/pitch"/>
+        <remap from="shot"  to="gun/shot"/>
+        <remap from="laser" to="gun/laser"/>
+        <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
+        <param name="CID" value="0"/>
+      </node>
+
+    </group>
+  </group>
+</launch>
+

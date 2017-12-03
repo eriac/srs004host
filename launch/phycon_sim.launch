@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+    <group ns="phycon">
+      <node name="master" pkg="srs004host" type="phycon_master_sim" />
+      <node name="wheel0" pkg="srs004host" type="phycon_wheel_sim" />
+      <node name="wheel1" pkg="srs004host" type="phycon_wheel_sim" />
+      <node name="wheel2" pkg="srs004host" type="phycon_wheel_sim" />
+      <node name="gun" pkg="srs004host" type="phycon_gun_sim" />
+      <node name="hitsensor" pkg="srs004host" type="phycon_hitsensor_sim" />
+    </group>
+
+  </group>
+</launch>
+

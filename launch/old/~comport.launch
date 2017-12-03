@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+    <group ns="comport">
+      <node name="canlink_to_seriallink" pkg="srs_common" type="canlink_to_seriallink" />
+      <node name="seriallink_decode" pkg="srs_common" type="seriallink_decode" />
+<!--
+      <node name="serialport" pkg="srs_common" type="serialport" />
+-->
+      <node name="seriallink_encode" pkg="srs_common" type="seriallink_encode" />
+      <node name="seriallink_to_canlink" pkg="srs_common" type="seriallink_to_canlink" />
+    </group>
+  </group>
+</launch>
+

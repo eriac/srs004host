@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+    <group ns="comport">
+      <node pkg="srs_common" type="serialport" name="serialport"/>
+    </group>
+  </group>
+</launch>

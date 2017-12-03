@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find omni_test)/launch/display.launch" />
+
+  <include file="$(find omni_test)/launch/test1.launch" />
+  <include file="$(find omni_test)/launch/test2.launch" />
+  <include file="$(find omni_test)/launch/comport.launch" />
+
+  <include file="$(find omni_test)/launch/remote.launch" />
+
+</launch>

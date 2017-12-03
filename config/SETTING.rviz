@@ -1,0 +1,860 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 0
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Hit1
+      Splitter Ratio: 0.589610398
+    Tree Height: 213
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679016
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: Image
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.0299999993
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.5
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        body0_body_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        body0_tracker_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gun0_base1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gun0_base2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gun0_gun_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        target0_target0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        target1_target0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        target2_target0_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wheel0_barrel_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_1_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_2_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_3_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_4_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_4_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_5_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_5_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_6_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_6_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_7_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_7_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_8_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_barrel_8_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_housing_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel0_housing_s_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wheel0_motor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_1_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_2_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_3_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_4_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_4_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_5_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_5_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_6_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_6_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_7_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_7_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_8_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_barrel_8_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_housing_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel1_housing_s_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wheel1_motor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_1_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_2_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_3_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_4_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_4_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_5_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_5_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_6_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_6_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_7_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_7_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_8_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_barrel_8_mark_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_housing_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel2_housing_s_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        wheel2_motor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: true
+        body0_body_link:
+          Value: false
+        body0_tracker_link:
+          Value: true
+        gun0_base1_link:
+          Value: false
+        gun0_base2_link:
+          Value: true
+        gun0_gun_link:
+          Value: true
+        target0_target0_link:
+          Value: true
+        target1_target0_link:
+          Value: true
+        target2_target0_link:
+          Value: true
+        wheel0_barrel_1_link:
+          Value: false
+        wheel0_barrel_1_mark_link:
+          Value: false
+        wheel0_barrel_2_link:
+          Value: false
+        wheel0_barrel_2_mark_link:
+          Value: false
+        wheel0_barrel_3_link:
+          Value: false
+        wheel0_barrel_3_mark_link:
+          Value: false
+        wheel0_barrel_4_link:
+          Value: false
+        wheel0_barrel_4_mark_link:
+          Value: false
+        wheel0_barrel_5_link:
+          Value: false
+        wheel0_barrel_5_mark_link:
+          Value: false
+        wheel0_barrel_6_link:
+          Value: false
+        wheel0_barrel_6_mark_link:
+          Value: false
+        wheel0_barrel_7_link:
+          Value: false
+        wheel0_barrel_7_mark_link:
+          Value: false
+        wheel0_barrel_8_link:
+          Value: false
+        wheel0_barrel_8_mark_link:
+          Value: false
+        wheel0_housing_link:
+          Value: true
+        wheel0_housing_s_link:
+          Value: false
+        wheel0_motor_link:
+          Value: false
+        wheel1_barrel_1_link:
+          Value: false
+        wheel1_barrel_1_mark_link:
+          Value: false
+        wheel1_barrel_2_link:
+          Value: false
+        wheel1_barrel_2_mark_link:
+          Value: false
+        wheel1_barrel_3_link:
+          Value: false
+        wheel1_barrel_3_mark_link:
+          Value: false
+        wheel1_barrel_4_link:
+          Value: false
+        wheel1_barrel_4_mark_link:
+          Value: false
+        wheel1_barrel_5_link:
+          Value: false
+        wheel1_barrel_5_mark_link:
+          Value: false
+        wheel1_barrel_6_link:
+          Value: false
+        wheel1_barrel_6_mark_link:
+          Value: false
+        wheel1_barrel_7_link:
+          Value: false
+        wheel1_barrel_7_mark_link:
+          Value: false
+        wheel1_barrel_8_link:
+          Value: false
+        wheel1_barrel_8_mark_link:
+          Value: false
+        wheel1_housing_link:
+          Value: true
+        wheel1_housing_s_link:
+          Value: false
+        wheel1_motor_link:
+          Value: false
+        wheel2_barrel_1_link:
+          Value: false
+        wheel2_barrel_1_mark_link:
+          Value: false
+        wheel2_barrel_2_link:
+          Value: false
+        wheel2_barrel_2_mark_link:
+          Value: false
+        wheel2_barrel_3_link:
+          Value: false
+        wheel2_barrel_3_mark_link:
+          Value: false
+        wheel2_barrel_4_link:
+          Value: false
+        wheel2_barrel_4_mark_link:
+          Value: false
+        wheel2_barrel_5_link:
+          Value: false
+        wheel2_barrel_5_mark_link:
+          Value: false
+        wheel2_barrel_6_link:
+          Value: false
+        wheel2_barrel_6_mark_link:
+          Value: false
+        wheel2_barrel_7_link:
+          Value: false
+        wheel2_barrel_7_mark_link:
+          Value: false
+        wheel2_barrel_8_link:
+          Value: false
+        wheel2_barrel_8_mark_link:
+          Value: false
+        wheel2_housing_link:
+          Value: true
+        wheel2_housing_s_link:
+          Value: false
+        wheel2_motor_link:
+          Value: false
+        world:
+          Value: true
+      Marker Scale: 0.5
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: false
+      Tree:
+        world:
+          base_link:
+            body0_body_link:
+              {}
+            body0_tracker_link:
+              {}
+            gun0_base1_link:
+              gun0_base2_link:
+                gun0_gun_link:
+                  {}
+            target0_target0_link:
+              {}
+            target1_target0_link:
+              {}
+            target2_target0_link:
+              {}
+            wheel0_housing_link:
+              wheel0_housing_s_link:
+                {}
+            wheel0_motor_link:
+              {}
+            wheel1_housing_link:
+              wheel1_housing_s_link:
+                {}
+            wheel1_motor_link:
+              {}
+            wheel2_housing_link:
+              wheel2_housing_s_link:
+                {}
+            wheel2_motor_link:
+              {}
+      Update Interval: 0
+      Value: true
+    - Buffer length: 100
+      Class: jsk_rviz_plugin/Plotter2D
+      Enabled: true
+      Name: Current0
+      Show Value: true
+      Topic: /my_robot/phycon/wheel0/current
+      Value: true
+      auto color change: true
+      auto scale: true
+      background color: 0; 0; 0
+      backround alpha: 0
+      border: true
+      foreground alpha: 1
+      foreground color: 25; 255; 240
+      height: 100
+      left: 140
+      linewidth: 1
+      max color: 255; 0; 0
+      max value: 1
+      min value: -1
+      show caption: true
+      text size: 12
+      top: 140
+      update interval: 0.0399999991
+      width: 100
+    - Buffer length: 100
+      Class: jsk_rviz_plugin/Plotter2D
+      Enabled: true
+      Name: Current1
+      Show Value: true
+      Topic: /my_robot/phycon/wheel1/current
+      Value: true
+      auto color change: true
+      auto scale: true
+      background color: 0; 0; 0
+      backround alpha: 0
+      border: true
+      foreground alpha: 1
+      foreground color: 25; 255; 240
+      height: 100
+      left: 260
+      linewidth: 1
+      max color: 255; 0; 0
+      max value: 1
+      min value: -1
+      show caption: true
+      text size: 12
+      top: 140
+      update interval: 0.0399999991
+      width: 100
+    - Buffer length: 100
+      Class: jsk_rviz_plugin/Plotter2D
+      Enabled: true
+      Name: Current2
+      Show Value: true
+      Topic: /my_robot/phycon/wheel2/current
+      Value: true
+      auto color change: true
+      auto scale: true
+      background color: 0; 0; 0
+      backround alpha: 0
+      border: true
+      foreground alpha: 1
+      foreground color: 25; 255; 240
+      height: 100
+      left: 380
+      linewidth: 1
+      max color: 255; 0; 0
+      max value: 1
+      min value: -1
+      show caption: true
+      text size: 12
+      top: 140
+      update interval: 0.0399999991
+      width: 100
+    - Class: jsk_rviz_plugin/PieChart
+      Enabled: true
+      Name: Gun Status
+      Topic: /my_robot/phycon/gun/status
+      Value: true
+      auto color change: false
+      background color: 0; 0; 0
+      backround alpha: 0
+      foreground alpha: 0.699999988
+      foreground alpha 2: 0.400000006
+      foreground color: 25; 255; 240
+      left: 140
+      max color: 255; 0; 0
+      max value: 10
+      min value: 0
+      show caption: true
+      size: 100
+      text size: 14
+      top: 280
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: PhyconDiagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/phycon/master: Connection"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 0
+      type: EVA
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: Wheel0Diagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/phycon/wheel0: Active"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 40
+      type: EVA
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: Wheel1Diagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/phycon/wheel0: Active"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 80
+      type: EVA
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: Wheel2Diagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/phycon/wheel1: Active"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 120
+      type: EVA
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: GunDiagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/phycon/gun: Active"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 160
+      type: EVA
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: HitSensorDiagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/phycon/hit0: Active"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 200
+      type: EVA
+    - Class: jsk_rviz_plugin/OverlayDiagnostic
+      Enabled: true
+      Name: JoyDiagnostic
+      Topic: /diagnostics
+      Value: true
+      alpha: 0.800000012
+      diagnostics namespace: "my_robot/joy_node: Joystick Driver Status"
+      left: 0
+      size: 128
+      stall duration: 5
+      top: 280
+      type: EVA
+    - Buffer length: 100
+      Class: jsk_rviz_plugin/Plotter2D
+      Enabled: true
+      Name: Hit
+      Show Value: true
+      Topic: /my_robot/phycon/hit0/hit
+      Value: true
+      auto color change: false
+      auto scale: true
+      background color: 0; 0; 0
+      backround alpha: 0
+      border: true
+      foreground alpha: 0.699999988
+      foreground color: 25; 255; 240
+      height: 100
+      left: 140
+      linewidth: 1
+      max color: 255; 0; 0
+      max value: 1
+      min value: -1
+      show caption: true
+      text size: 12
+      top: 420
+      update interval: 0.0399999991
+      width: 100
+    - Class: rviz/Image
+      Enabled: false
+      Image Topic: /comport/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: false
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /my_robot/image_zoom
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: world
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 2.90172815
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.0599999987
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Focal Shape Fixed Size: false
+      Focal Shape Size: 0.0500000007
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.00999999978
+      Pitch: 0.230397701
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 2.75039744
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 959
+  Hide Left Dock: false
+  Hide Right Dock: true
+  Image:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000002d90000032ffc020000000bfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000116000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006500000002100000011b0000001600fffffffb0000000a0049006d0061006700650100000144000002130000001600fffffffb0000000a0049006d00610067006501000001b2000001790000000000000000000000010000010f000002e2fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000028000002e2000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f00000044fc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000004600000032f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: true
+  Width: 1855
+  X: 65
+  Y: 24

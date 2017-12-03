@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="model" default="$(find srs004host)/urdf/robot.urdf.xacro"/>
+  <arg name="gui" default="false" />
+  <arg name="rvizconfig" default="$(find srs004host)/rviz/urdf.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <group ns="my_robot">
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="joy_node" pkg="joy" type="joy_node" />
+  </group>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find srs004host)/config/SETTING.rviz" required="true" />
+</launch>
+

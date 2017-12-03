@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+
+  <group ns="$(arg robot_name)">
+    <node name="joy_node" pkg="joy" type="joy_node" />
+
+    <node name="robot_commander" pkg="omni_test" type="robot_commander" />
+
+    <node name="omni_driver" pkg="omni_test" type="omni_driver" output="screen">
+      <remap from="twist" to="move_twist"/>
+      <remap from="wheel0" to="phycon/wheel0/target"/>
+      <remap from="wheel1" to="phycon/wheel1/target"/>
+      <remap from="wheel2" to="phycon/wheel2/target"/>
+      <param name="wheel_base" value="0.0972"/>
+      <param name="wheel_radius" value="0.019"/>
+      <param name="linear_velocity" value="1.0"/>
+      <param name="angular_velocity" value="4.0"/>
+      <param name="wheel0" value="$(eval 3.1415/3)"/>
+      <param name="wheel1" value="$(eval 3.1415)"/>
+      <param name="wheel2" value="$(eval 5*3.1415/3)"/>
+    </node>
+
+    <node name="omni_odometry" pkg="omni_test" type="omni_odometry" output="screen">
+      <remap from="odometry0" to="phycon/wheel0/odometry"/>
+      <remap from="odometry1" to="phycon/wheel1/odometry"/>
+      <remap from="odometry2" to="phycon/wheel2/odometry"/>
+      <param name="wheel_base" value="0.0972"/>
+      <param name="wheel_radius" value="0.019"/>
+    </node>
+
+    <node name="gun_driver" pkg="omni_test" type="gun_driver">
+      <remap from="twist"   to="gun_twist"/>
+      <remap from="command" to="gun_command"/>
+      <remap from="yaw"     to="phycon/gun/yaw"/>
+      <remap from="pitch"   to="phycon/gun/pitch"/>
+      <remap from="shot"    to="phycon/gun/shot"/>
+      <remap from="laser"   to="phycon/gun/laser"/>
+
+      <param name="yaw_lower_limit" value="-0.3"/>
+      <param name="yaw_upper_limit" value="0.3"/>
+      <param name="pitch_lower_limit" value="-0.2"/>
+      <param name="pitch_upper_limit" value="0.2"/>
+      <param name="yaw_velocity" value="0.3"/>
+      <param name="pitch_velocity" value="0.3"/>
+    </node>
+<!--
+    <group ns="phycon">
+      <node name="master" pkg="omni_test" type="phycon_master_sim" />
+      <node name="wheel0" pkg="omni_test" type="phycon_wheel_sim" />
+      <node name="wheel1" pkg="omni_test" type="phycon_wheel_sim" />
+      <node name="wheel2" pkg="omni_test" type="phycon_wheel_sim" />
+      <node name="gun" pkg="omni_test" type="phycon_gun_sim" />
+      <node name="hitsensor" pkg="omni_test" type="phycon_hitsensor_sim" />
+    </group>
+-->
+  </group>
+
+  <group ns="aa/bb">
+    <node name="test0101" pkg="omni_test" type="test01" output="screen"/>
+  </group>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <!--
+  <rosparam>
+    my_robo:
+      joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 50  
+      
+      controller0:
+        type: velocity_controllers/JointVelocityController
+        joint: wheel0_housing_joint
+
+      controller1:
+        type: velocity_controllers/JointVelocityController
+        joint: wheel1_housing_joint
+
+      controller2:
+        type: velocity_controllers/JointVelocityController
+        joint: wheel2_housing_joint
+
+      controller3:
+        type: position_controllers/JointPositionController
+        joint: gun0_base2_joint
+
+      controller4:
+        type: position_controllers/JointPositionController
+        joint: gun0_gun_joint
+  </rosparam>
+  -->
+  <!-- load the controllers -->
+
+</launch>
+
