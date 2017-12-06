@@ -6,6 +6,7 @@
 #include "diagnostic_updater/diagnostic_updater.h"
 
 ros::Publisher canlink_pub;
+std::string CAN_CH="";
 int CAN_ID=0;
 float yaw_last=0;
 float pitch_last=0;
@@ -14,7 +15,7 @@ void twist_callback(const geometry_msgs::Twist& twist_msg){
 	int servo2=1520-twist_msg.angular.y/(2*3.14)*360*10;
 
 	srs_common::CANCode cancode;
-	cancode.channel="A";
+	cancode.channel=CAN_CH;
 	cancode.id=CAN_ID;
 	cancode.com=1;
 	cancode.length=4;
@@ -27,7 +28,7 @@ void twist_callback(const geometry_msgs::Twist& twist_msg){
 void shot_callback(const std_msgs::Int32& int_msg){
 	int shot_num=int_msg.data;
 	srs_common::CANCode cancode;
-	cancode.channel="A";
+	cancode.channel=CAN_CH;
 	cancode.id=CAN_ID;
 	cancode.com=2;
 	cancode.length=1;
@@ -37,7 +38,7 @@ void shot_callback(const std_msgs::Int32& int_msg){
 void laser_callback(const std_msgs::Int32& int_msg){
 	int laser_num=int_msg.data;
 	srs_common::CANCode cancode;
-	cancode.channel="A";
+	cancode.channel=CAN_CH;
 	cancode.id=CAN_ID;
 	cancode.com=3;
 	cancode.length=1;
@@ -55,7 +56,8 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "pycon_gun_actual");
 	ros::NodeHandle n;
 	ros::NodeHandle pn("~");
-	pn.getParam("CID", CAN_ID);
+	pn.getParam("CAN_CH", CAN_CH);
+	pn.getParam("CAN_ID", CAN_ID);
 
 	//publish
 	canlink_pub = n.advertise<srs_common::CANCode>("CANLink_out", 1000);

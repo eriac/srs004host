@@ -10,6 +10,7 @@
 
 ros::Publisher hit_pub;
 ros::Publisher canlink_pub;
+std::string CAN_CH="";
 int CAN_ID=0;
 int hit_counter=0;
 void reset_callback(const std_msgs::Float32& float_msg){
@@ -17,7 +18,7 @@ void reset_callback(const std_msgs::Float32& float_msg){
 }
 int diagnostic_counter=0;
 void canlink_callback(const srs_common::CANCode& can_msg){
-	if(can_msg.id==CAN_ID){
+	if(can_msg.channel==CAN_CH && can_msg.id==CAN_ID){
 		if(can_msg.com==1 /*&&can_msg.length==1*/){
 			hit_counter=(int)hit_counter+can_msg.data[0];
 			std_msgs::Float32 t_msg;
@@ -31,7 +32,7 @@ void light_callback(const std_msgs::Float32& float_msg){
 	if(0<=float_msg.data && float_msg.data<=1){
 		int data=float_msg.data*0xff;
 		srs_common::CANCode cancode;
-		cancode.channel="A";
+		cancode.channel=CAN_CH;
 		cancode.id=CAN_ID;
 		cancode.com=2;
 		cancode.length=1;
@@ -54,7 +55,8 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "phycon_hitsensor_actual");
 	ros::NodeHandle n;
 	ros::NodeHandle pn("~");
-	pn.getParam("CID", CAN_ID);
+	pn.getParam("CAN_CH", CAN_CH);
+	pn.getParam("CAN_ID", CAN_ID);
 
 	//publish
 	hit_pub      = n.advertise<std_msgs::Float32>(ros::this_node::getName()+"/hit", 1000);
@@ -75,7 +77,7 @@ int main(int argc, char **argv)
 	while (ros::ok()){
 		//com1 remote
 		srs_common::CANCode cancode;
-		cancode.channel="A";
+		cancode.channel=CAN_CH;
 		cancode.id=CAN_ID;
 		cancode.com=1;
 		cancode.length=1;

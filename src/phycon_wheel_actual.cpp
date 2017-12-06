@@ -6,6 +6,7 @@
 ros::Publisher  odometry_pub;
 ros::Publisher  current_pub;
 ros::Publisher  canlink_pub;
+std::string CAN_CH="";
 int CAN_ID=0;
 float PPR=400;
 int diagnostic_counter=0;
@@ -14,7 +15,7 @@ void target_callback(const std_msgs::Float32& float_msg){
 	float target=float_msg.data*PPR/(2*3.14*20);
 	int data=0x1000+(target/2/3.1415*102.1)*0x1000/4000;
 	srs_common::CANCode cancode;
-	cancode.channel="A";
+	cancode.channel=CAN_CH;
 	cancode.id=CAN_ID;
 	cancode.com=1;
 	cancode.length=2;
@@ -24,7 +25,7 @@ void target_callback(const std_msgs::Float32& float_msg){
 }
 
 void canin_callback(const srs_common::CANCode& can_msg){
-	if(can_msg.id==CAN_ID){
+	if(can_msg.channel==CAN_CH && can_msg.id==CAN_ID){
 		if(can_msg.com==1 /*&&can_msg.length==6*/){
 			int temp1=can_msg.data[0]<<24|can_msg.data[1]<<16|can_msg.data[2]<<8|can_msg.data[3]<<0;
 			int temp2=can_msg.data[4]<<8|can_msg.data[5]<<0;
@@ -56,7 +57,8 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "pycon_wheel_actual");
 	ros::NodeHandle n;
 	ros::NodeHandle pn("~");
-	pn.getParam("CID", CAN_ID);
+	pn.getParam("CAN_CH", CAN_CH);
+	pn.getParam("CAN_ID", CAN_ID);
 	pn.getParam("PPR", PPR);
 
 	//publish
@@ -80,7 +82,7 @@ int main(int argc, char **argv)
 	while (ros::ok()){
 
 		srs_common::CANCode cancode;
-		cancode.channel="A";
+		cancode.channel=CAN_CH;
 		cancode.id=CAN_ID;
 		cancode.com=1;
 		cancode.remote=true;

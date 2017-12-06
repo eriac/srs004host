@@ -12,22 +12,21 @@
 ros::Publisher voltage_pub;
 ros::Publisher current_pub;
 ros::Publisher canlink_pub;
+std::string CAN_CH="";
+int CAN_ID=0;
 
 void canin_callback(const srs_common::CANCode& can_msg){
-	if(can_msg.channel=="S"){//CAN_ID
-		if(can_msg.id==1){//CAN_ID
-			if(can_msg.com==1 /*&&can_msg.length==4*/){
-				float data0=can_msg.data[0]+can_msg.data[1]/256.0;
-				float data1=can_msg.data[2]+can_msg.data[3]/256.0;
-				ROS_INFO("V:%f, A:%f\n", data0, data1);
+	if(can_msg.channel==CAN_CH && can_msg.id==CAN_ID){
+		if(can_msg.com==1 /*&&can_msg.length==4*/){
+			float data0=can_msg.data[0]+can_msg.data[1]/256.0;
+			float data1=can_msg.data[2]+can_msg.data[3]/256.0;
 			
-				//publish voltage current
-				std_msgs::Float32 float_data;
-				float_data.data=data0;
-				voltage_pub.publish(float_data);
-				float_data.data=data1;
-				current_pub.publish(float_data);
-			}
+			//publish voltage current
+			std_msgs::Float32 float_data;
+			float_data.data=data0;
+			voltage_pub.publish(float_data);
+			float_data.data=data1;
+			current_pub.publish(float_data);
 		}
 	}
 }
@@ -41,6 +40,9 @@ int main(int argc, char **argv)
 	ros::init(argc, argv, "phycon_master_actual");
 	ros::NodeHandle n;
 	ros::NodeHandle pn("~");
+	pn.getParam("CAN_CH", CAN_CH);
+	pn.getParam("CAN_ID", CAN_ID);
+	
 
 	//publish
 	voltage_pub = n.advertise<std_msgs::Float32>(ros::this_node::getName()+"/voltage", 1000);
@@ -59,8 +61,8 @@ int main(int argc, char **argv)
 	ros::Rate loop_rate(10); 
 	while (ros::ok()){
 		srs_common::CANCode can_msg;
-		can_msg.channel="S";
-		can_msg.id=1;
+		can_msg.channel=CAN_CH;
+		can_msg.id=CAN_ID;
 		can_msg.com=1;
 		can_msg.remote=true;
 		canlink_pub.publish(can_msg);

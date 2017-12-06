@@ -7,19 +7,22 @@
       <node name="wheel0" pkg="srs004host" type="phycon_wheel_actual" >
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
-        <param name="CID" value="1"/>
+        <param name="CAN_CH" value="A"/>
+        <param name="CAN_ID" value="1"/>
         <param name="PPR" value="102.1"/>
       </node>
       <node name="wheel1" pkg="srs004host" type="phycon_wheel_actual" >
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
-        <param name="CID" value="2"/>
+        <param name="CAN_CH" value="A"/>
+        <param name="CAN_ID" value="2"/>
         <param name="PPR" value="102.1"/>
       </node>
       <node name="wheel2" pkg="srs004host" type="phycon_wheel_actual" >
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
 	<remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
-        <param name="CID" value="3"/>
+        <param name="CAN_CH" value="A"/>
+        <param name="CAN_ID" value="3"/>
         <param name="PPR" value="102.1"/>
       </node>
 
@@ -28,21 +31,24 @@
         <remap from="shot"  to="gun/shot"/>
         <remap from="laser" to="gun/laser"/>
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
-        <param name="CID" value="0"/>
+        <param name="CAN_CH" value="A"/>
+        <param name="CAN_ID" value="0"/>
       </node>
 
       <node name="hit0" pkg="srs004host" type="phycon_hitsensor_actual" >
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
-        <param name="CID" value="5"/>
+        <param name="CAN_CH" value="A"/>
+	<param name="CAN_ID" value="5"/>
       </node>
-<!--
+
       <node name="master" pkg="srs004host" type="phycon_master_actual" output="screen">
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
-        <param name="CID" value="1"/>
+        <param name="CAN_CH" value="S"/>
+        <param name="CAN_ID" value="1"/>
       </node>
--->
+
 
     </group>
     <group ns="comport">
