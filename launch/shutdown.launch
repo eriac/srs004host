@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <machine name="robot1" address="192.168.2.53" env-loader="/home/pi/catkin_ws/devel/env.sh" user="pi" password="raspberry"/>
+    <node machine="robot1" pkg="shutdown" type="srs_common" name="shutdown" />
+    
+</launch>

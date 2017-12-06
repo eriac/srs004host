@@ -233,6 +233,10 @@ add_executable(phycon_hitsensor_actual src/phycon_hitsensor_actual.cpp)
 target_link_libraries(phycon_hitsensor_actual ${catkin_LIBRARIES})
 add_dependencies(phycon_gun_actual srs_common_generate_messages_cpp)
 
+add_executable(phycon_master_actual src/phycon_master_actual.cpp)
+target_link_libraries(phycon_master_actual ${catkin_LIBRARIES})
+add_dependencies(phycon_master_actual srs_common_generate_messages_cpp)
+
 #phycon:sim
 add_executable(phycon_wheel_sim src/phycon_wheel_sim.cpp)
 target_link_libraries(phycon_wheel_sim ${catkin_LIBRARIES})

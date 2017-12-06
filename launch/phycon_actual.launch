@@ -36,6 +36,13 @@
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
         <param name="CID" value="5"/>
       </node>
+<!--
+      <node name="master" pkg="srs004host" type="phycon_master_actual" output="screen">
+        <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
+        <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
+        <param name="CID" value="1"/>
+      </node>
+-->
 
     </group>
     <group ns="comport">

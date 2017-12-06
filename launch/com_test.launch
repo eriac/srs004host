@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+<!--
+    <group ns="comport">
+      <node name="canlink_to_seriallink" pkg="srs_common" type="canlink_to_seriallink" />
+      <node name="seriallink_decode" pkg="srs_common" type="seriallink_decode" />
+      <node name="serialport" pkg="srs_common" type="serialport" />
+      <node name="seriallink_encode" pkg="srs_common" type="seriallink_encode" />
+      <node name="seriallink_to_canlink" pkg="srs_common" type="seriallink_to_canlink" />
+    </group>
+-->
+    <group ns="phycon">
+      <node name="master" pkg="srs004host" type="phycon_master_actual" output="screen">
+        <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
+        <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
+        <param name="CID" value="1"/>
+      </node>
+    </group>
+  </group>
+</launch>
+
