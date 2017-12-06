@@ -231,7 +231,7 @@ add_dependencies(phycon_gun_actual srs_common_generate_messages_cpp)
 
 add_executable(phycon_hitsensor_actual src/phycon_hitsensor_actual.cpp)
 target_link_libraries(phycon_hitsensor_actual ${catkin_LIBRARIES})
-add_dependencies(phycon_gun_actual srs_common_generate_messages_cpp)
+add_dependencies(phycon_hitsensor_actual srs_common_generate_messages_cpp)
 
 add_executable(phycon_master_actual src/phycon_master_actual.cpp)
 target_link_libraries(phycon_master_actual ${catkin_LIBRARIES})
