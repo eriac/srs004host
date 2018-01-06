@@ -12,6 +12,7 @@
     <include file="$(find srs004host)/launch/phycon_sim.launch" />
   </group>
   <group unless="$(arg sim)">
+    <include file="$(find srs004host)/launch/camera.launch" />
     <include file="$(find srs004host)/launch/phycon_actual.launch" />
 
     <group if="$(arg local)">

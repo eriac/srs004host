@@ -55,7 +55,7 @@ void joy_callback(const sensor_msgs::Joy& joy_msg){
 
 	//move
 	geometry_msgs::Twist twist_data;
-	float linear_gain=0.3;
+	float linear_gain=0.2;
 	float angular_gain=0.6;
 	if(joy_msg.buttons[PS3_L3]){
 		linear_gain=1.0;
@@ -67,14 +67,14 @@ void joy_callback(const sensor_msgs::Joy& joy_msg){
 	}
 	else{
 		twist_data.linear.x =linear_gain* joy_msg.axes[1];
-		twist_data.linear.y =angular_gain*joy_msg.axes[0];
+		twist_data.linear.y =linear_gain*joy_msg.axes[0];
 	}
 	move_twist_pub.publish(twist_data);
 
 
 	//gun
-	float gun_gain=0.3;
-	if(joy_msg.buttons[PS3_R3])gun_gain=1.0;
+	float gun_gain=1.0;
+	if(joy_msg.buttons[PS3_R1])gun_gain=0.1;
 	geometry_msgs::Twist twist_gdata;
 	twist_gdata.angular.z =gun_gain*joy_msg.axes[2];
 	twist_gdata.angular.y =gun_gain*joy_msg.axes[3];

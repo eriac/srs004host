@@ -6,21 +6,44 @@
   <xacro:include filename="$(find srs004host)/urdf/gun.urdf.xacro"/>
 
   <link name="world"/>
+  <link name="base_link"/>
   <joint name="base_joint" type="floating">
     <parent link="world"/>
     <child link="base_link"/>
   </joint>
 
-
-  <link name="base_link"/>
+  <link name="world2"/>
+  <joint name="world2_joint" type="fixed">
+    <parent link="world"/>
+    <child link="world2"/>
+    <origin rpy="0 0 0" xyz="1 0 0"/>  
+  </joint>
 
   <xacro:body prefix="body0" parent="base_link" />
+
+  <link name="camera"/>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera"/>
+    <origin rpy="-1.5707 0 -1.5707" xyz="0.010 0 0.204"/>  
+  </joint>
 
   <xacro:omni_wheel prefix="wheel0" parent="base_link" radius="0.075" dir="${pi/3}"   height="-0.022" />
   <xacro:omni_wheel prefix="wheel1" parent="base_link" radius="0.075" dir="${pi}"     height="-0.022" />
   <xacro:omni_wheel prefix="wheel2" parent="base_link" radius="0.075" dir="${5*pi/3}" height="-0.022" />
 
   <xacro:gun_tullet prefix="gun0" parent="base_link" pos_x="0.010" pos_z="0.038" />
+
+  <link name="reticle0_link"/>
+  <joint name="reticle0_joint" type="floating">
+    <parent link="world"/>
+    <child link="reticle0_link"/>
+  </joint>
+  <link name="reticle1_link"/>
+  <joint name="reticle1_joint" type="floating">
+    <parent link="world"/>
+    <child link="reticle1_link"/>
+  </joint>
 
   <!-- ===============  Gazebo =============== -->
   <gazebo>

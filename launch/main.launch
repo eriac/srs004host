@@ -5,6 +5,7 @@
     <node name="srs004_robot_commander" pkg="srs004host" type="srs004_robot_commander" >
       <remap from="light" to="phycon/hit0/light" />
       <remap from="hit_reset" to="phycon/hit0/reset" />
+      <remap from="camera_zoom" to="head_camera/camera_zoom" />
     </node>
   </group>
 </launch>

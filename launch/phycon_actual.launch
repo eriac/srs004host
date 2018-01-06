@@ -9,21 +9,21 @@
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
         <param name="CAN_CH" value="A"/>
         <param name="CAN_ID" value="1"/>
-        <param name="PPR" value="102.1"/>
+        <param name="PPR" value="-397"/>
       </node>
       <node name="wheel1" pkg="srs004host" type="phycon_wheel_actual" >
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
         <remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
         <param name="CAN_CH" value="A"/>
         <param name="CAN_ID" value="2"/>
-        <param name="PPR" value="102.1"/>
+        <param name="PPR" value="-397"/>
       </node>
       <node name="wheel2" pkg="srs004host" type="phycon_wheel_actual" >
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
 	<remap from="CANLink_in" to="/$(arg robot_name)/comport/CANLink_in"/>
         <param name="CAN_CH" value="A"/>
         <param name="CAN_ID" value="3"/>
-        <param name="PPR" value="102.1"/>
+        <param name="PPR" value="-397"/>
       </node>
 
       <node name="gun" pkg="srs004host" type="phycon_gun_actual" >
@@ -33,6 +33,9 @@
         <remap from="CANLink_out" to="/$(arg robot_name)/comport/CANLink_out"/>
         <param name="CAN_CH" value="A"/>
         <param name="CAN_ID" value="0"/>
+        <param name="y_ajust" value="0.055"/>
+        <param name="z_ajust" value="-0.045"/>
+
       </node>
 
       <node name="hit0" pkg="srs004host" type="phycon_hitsensor_actual" >

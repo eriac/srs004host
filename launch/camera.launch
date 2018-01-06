@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot_name" default="my_robot"/>
+  <group ns="$(arg robot_name)">
+    <group ns="head_camera">
+      <node name="republish" pkg="image_transport" type="republish" args="compressed raw">
+        <remap from="in" to="image_raw"/>
+        <remap from="out" to="image_exp"/>
+      </node>
+
+      <node name="image_proc" pkg="image_proc" type="image_proc">
+        <remap from="image_raw" to="image_exp" />
+        <remap from="camera_info" to="camera_info" />
+      </node>
+
+      <node name="cv_zoom" pkg="srs_common" type="cv_zoom" >
+        <remap from="image_input" to="image_rect_color"/>
+        <remap from="image_output" to="image_zoom"/>
+        <remap from="zoom" to="camera_zoom"/>
+        <param name="error_y" value="-70"/>
+      </node>
+
+    </group>
+  </group>
+</launch>

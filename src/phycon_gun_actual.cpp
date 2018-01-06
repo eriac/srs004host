@@ -8,11 +8,11 @@
 ros::Publisher canlink_pub;
 std::string CAN_CH="";
 int CAN_ID=0;
-float yaw_last=0;
-float pitch_last=0;
+float z_ajust=0;
+float y_ajust=0;
 void twist_callback(const geometry_msgs::Twist& twist_msg){
-	int servo1=1520+twist_msg.angular.z/(2*3.14)*360*10;
-	int servo2=1520-twist_msg.angular.y/(2*3.14)*360*10;
+	int servo1=1520+(twist_msg.angular.z+z_ajust)/(2*3.14)*360*10;
+	int servo2=1520-(twist_msg.angular.y+y_ajust)/(2*3.14)*360*10;
 
 	srs_common::CANCode cancode;
 	cancode.channel=CAN_CH;
@@ -58,6 +58,8 @@ int main(int argc, char **argv)
 	ros::NodeHandle pn("~");
 	pn.getParam("CAN_CH", CAN_CH);
 	pn.getParam("CAN_ID", CAN_ID);
+	pn.getParam("y_ajust", y_ajust);
+	pn.getParam("z_ajust", z_ajust);
 
 	//publish
 	canlink_pub = n.advertise<srs_common::CANCode>("CANLink_out", 1000);
